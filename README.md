@@ -86,7 +86,6 @@ Learn Restangular! Try the [live demo on plunkr](http://plnkr.co/edit/8qrGeE?p=p
     - [When I set baseUrl with a port, it's stripped out.](#when-i-set-baseurl-with-a-port-its-stripped-out)
     - [How can I access the unrestangularized element as well as the restangularized one?](#how-can-i-access-the-unrestangularized-element-as-well-as-the-restangularized-one)
     - [Restangular fails with status code 0](#restangular-fails-with-status-code-0)
-    - [Why does this depend on Lodash / Underscore?](#why-does-this-depend-on-lodash--underscore)
     - [How do I cancel a request?](#how-do-i-cancel-a-request)
 - [Supported Angular versions](#supported-angular-versions)
 - [Server Frameworks](#server-frameworks)
@@ -157,7 +156,7 @@ You can download this by:
 
 ## Dependencies
 
-Restangular depends on Angular and Lodash (or Underscore).
+Restangular depends on Angular.
 
 **[Back to top](#table-of-contents)**
 
@@ -1302,12 +1301,6 @@ By
 #### Restangular fails with status code 0
 
 This is typically caused by Cross Origin Request policy. In order to enable cross domain communication and get correct response with appropriate status codes, you must have the CORS headers attached, even in error responses. If the server does not attach the CORS headers to the response then the XHR object won't parse it, thus the XHR object won't have any response body, status or any other response data inside which typically will cause your request to fail with status code 0.
-
-#### Why does this depend on Lodash / Underscore?
-
-This is a very good question. I could've done the code so that I don't depend on Underscore nor Lodash, but I think both libraries make your life SO much easier. They have all of the "functional" stuff like map, reduce, filter, find, etc.
-With these libraries, you always work with immutable stuff, you get compatibility for browsers which don't implement ECMA5 nor some of these cool methods, and they're actually quicker.
-So, why not use it? If you've never heard of them, by using Restangular, you could start using them. Trust me, you're never going to give them up after this!
 
 **[Back to top](#table-of-contents)**
 

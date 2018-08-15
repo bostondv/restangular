@@ -1,7 +1,6 @@
 // Karma configuration
 
 var angularVersion = '1.5.9';
-var lodashVersion = '4.17.2';
 
 module.exports = function (config) {
   config.set({
@@ -15,7 +14,6 @@ module.exports = function (config) {
     files: [
       'https://cdnjs.cloudflare.com/ajax/libs/angular.js/' + angularVersion + '/angular.js',
       'https://cdnjs.cloudflare.com/ajax/libs/angular.js/' + angularVersion + '/angular-mocks.js',
-      'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/' + lodashVersion + '/lodash.js',
       'src/restangular.js',
       'test/*.js'
     ],

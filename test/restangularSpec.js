@@ -245,7 +245,7 @@ describe('Restangular', function () {
       var restangularFields = Restangular.configuration.restangularFields;
       // create an object whose keys are the values of the restangularFields
       var postData = {};
-      _.each(restangularFields, function (value, key) {
+      angular.forEach(restangularFields, function (value, key) {
         postData.value = value;
       });
       // we don't want our post data to be treated as a restangularized object
@@ -273,7 +273,7 @@ describe('Restangular', function () {
       // create an object whose keys are the values of the restangularFields
       // i.e. {save: "save", clone: "clone", doPOST: "doPOST", ...}
       var postData = {};
-      _.each(restangularFields, function (value, key) {
+      angular.forEach(restangularFields, function (value, key) {
         postData.value = value;
       });
       // we expect the http service to get all of these "original" properties in the data object
@@ -283,7 +283,7 @@ describe('Restangular', function () {
       // the new config will be something like
       // {id: '_id', save: '_save', clone: '_clone', ...}
       var newFieldConfig = {};
-      _.each(restangularFields, function (value, key) {
+      angular.forEach(restangularFields, function (value, key) {
         newFieldConfig[key] = '_' + key;
       });
       Restangular.setRestangularFields(newFieldConfig);
@@ -547,8 +547,8 @@ describe('Restangular', function () {
 
       Restangular.restangularizeCollection(null, collection, 'accounts');
 
-      expect(_.has(collection, 'get')).toBe(true);
-      expect(_.has(collection[0], 'get')).toBe(true);
+      expect(collection.hasOwnProperty('get')).toBe(true);
+      expect(collection[0].hasOwnProperty('get')).toBe(true);
 
       expect(collection.getRestangularUrl()).toBe('/accounts');
       expect(collection[0].getRestangularUrl()).toBe('/accounts/0');
@@ -560,7 +560,7 @@ describe('Restangular', function () {
 
       Restangular.restangularizeCollection(null, collection, 'accounts');
 
-      expect(_.has(collection, 'get')).toBe(true);
+      expect(collection.hasOwnProperty('get')).toBe(true);
 
       expect(collection.getRestangularUrl()).toBe('/accounts');
     });
@@ -869,7 +869,7 @@ describe('Restangular', function () {
       }).service('accounts');
 
       expect(Accounts.doSomething).toBeDefined();
-      expect(_.isFunction(Accounts.doSomething)).toBeTruthy();
+      expect(angular.isFunction(Accounts.doSomething)).toBeTruthy();
 
       Accounts.post(testData.newAccount);
       Accounts.one(0).get();
