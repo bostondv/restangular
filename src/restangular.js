@@ -1001,7 +1001,7 @@
             return array;
           }
           
-          var newElem = angular.copy(elem);
+          var newElem = angular.extend({}, elem);
           Object.keys(config.restangularFields).forEach(function(key) {
             key !== 'id' && delete newElem[config.restangularFields[key]];
           });
