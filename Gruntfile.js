@@ -24,13 +24,13 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['src/*.js'],
-        dest: '<%= dirs.dest %>/<%= pkg.name %>.js'
+        dest: '<%= dirs.dest %>/<%= pkg.displayName %>.js'
       }
     },
     zip: {
       '<%= dirs.dest %>/restangular.zip': [
-        '<%= dirs.dest %>/<%= pkg.name %>.js',
-        '<%= dirs.dest %>/<%= pkg.name %>.min.js'
+        '<%= dirs.dest %>/<%= pkg.displayName %>.js',
+        '<%= dirs.dest %>/<%= pkg.displayName %>.min.js'
       ]
     },
     bowerInstall: {
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['<%= concat.dist.dest %>'],
-        dest: '<%= dirs.dest %>/<%= pkg.name %>.min.js'
+        dest: '<%= dirs.dest %>/<%= pkg.displayName %>.min.js'
       }
     },
     jshint: {

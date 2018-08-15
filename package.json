@@ -1,14 +1,15 @@
 {
-  "name": "restangular",
+  "name": "@priotas/restangular",
+  "displayName": "restangular",
   "description": "Restful Resources service for AngularJS apps",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "filename": "restangular.min.js",
   "main": "./dist/restangular.js",
-  "homepage": "https://github.com/mgonto/restangular",
+  "homepage": "https://github.com/priotas/restangular",
   "author": "Martin Gontovnikas <martin@gon.to>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mgonto/restangular.git"
+    "url": "git://github.com/priotas/restangular.git"
   },
   "engines": {
     "node": ">= 0.9"
