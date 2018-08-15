@@ -1,6 +1,6 @@
 /**
  * Restful Resources service for AngularJS apps
- * @version v1.7.0 - 2018-08-15 * @link https://github.com/priotas/restangular
+ * @version v1.7.1 - 2018-08-15 * @link https://github.com/priotas/restangular
  * @author Martin Gontovnikas <martin@gon.to>
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */(function(root, factory) {
@@ -1006,7 +1006,7 @@
             return array;
           }
           
-          var newElem = angular.copy(elem);
+          var newElem = angular.extend({}, elem);
           Object.keys(config.restangularFields).forEach(function(key) {
             key !== 'id' && delete newElem[config.restangularFields[key]];
           });
